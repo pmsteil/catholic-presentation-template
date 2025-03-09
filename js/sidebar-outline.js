@@ -1,30 +1,39 @@
 /**
  * Sidebar Outline for Catholic Presentation Template
  * Synchronizes sidebar outline with slide content
+ * Royal Gothic Gold Theme
  */
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize once Reveal is fully loaded
   Reveal.addEventListener('ready', function() {
     initSidebar();
+    console.log('Sidebar initialized');
   });
+  
+  // Also try to initialize immediately
+  setTimeout(function() {
+    initSidebar();
+    console.log('Sidebar initialized via timeout');
+  }, 1000);
 });
 
 function initSidebar() {
-  // Create sidebar structure if it doesn't exist
-  if (!document.getElementById('sidebar')) {
-    const sidebar = document.createElement('div');
-    sidebar.id = 'sidebar';
-    
-    const sidebarTitle = document.createElement('h3');
-    sidebarTitle.textContent = 'Presentation Outline';
-    sidebar.appendChild(sidebarTitle);
-    
-    const outline = document.createElement('ul');
-    outline.id = 'outline';
-    sidebar.appendChild(outline);
-    
-    document.body.appendChild(sidebar);
+  // The sidebar is now part of the HTML structure
+  // We just need to ensure the outline element exists
+  if (!document.getElementById('outline')) {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      const outline = document.createElement('ul');
+      outline.id = 'outline';
+      sidebar.appendChild(outline);
+    }
+  }
+  
+  // Clear any existing outline items
+  const outlineElement = document.getElementById('outline');
+  if (outlineElement) {
+    outlineElement.innerHTML = '';
   }
   
   // Build outline from slide contents
@@ -84,25 +93,37 @@ function createOutlineItem(slide, h, v) {
   item.setAttribute('data-slide-h', h);
   item.setAttribute('data-slide-v', v);
   
+  // Create a link element for better interactivity
+  const link = document.createElement('a');
+  link.href = '#/' + h + '/' + v;
+  
   // Use data-outline attribute if available, otherwise use the first heading
   if (slide.hasAttribute('data-outline')) {
-    item.textContent = slide.getAttribute('data-outline');
+    link.textContent = slide.getAttribute('data-outline');
   } else {
     const heading = slide.querySelector('h1, h2, h3, h4, h5, h6');
     if (heading) {
-      item.textContent = heading.textContent;
+      link.textContent = heading.textContent;
     } else {
-      item.textContent = `Slide ${h+1}.${v+1}`;
+      link.textContent = `Slide ${h+1}.${v+1}`;
     }
   }
   
+  // Add the link to the list item
+  item.appendChild(link);
+  
   // Add click event to navigate to this slide
-  item.addEventListener('click', function() {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
     Reveal.slide(h, v);
+    console.log('Navigating to slide', h, v);
   });
   
   // Set default visibility state (initially hidden)
   item.classList.add('future');
+  
+  // Log for debugging
+  console.log('Created outline item:', link.textContent, 'for slide', h, v);
   
   return item;
 }
@@ -111,27 +132,40 @@ function updateActiveSection(h, v) {
   // Clear all active states
   document.querySelectorAll('#outline li').forEach(function(item) {
     item.classList.remove('active');
-    
-    // Check if this item should be visible based on slide progression
+    item.classList.remove('visible');
+    item.classList.remove('past');
+    item.classList.remove('future');
+  });
+  
+  // Set active state for current slide and make all items visible
+  const currentItem = document.querySelector(`#outline li[data-slide-h="${h}"][data-slide-v="${v}"]`);
+  
+  // Make all items visible but with different opacity levels
+  document.querySelectorAll('#outline li').forEach(function(item) {
     const itemH = parseInt(item.getAttribute('data-slide-h'));
     const itemV = parseInt(item.getAttribute('data-slide-v'));
     
-    if (itemH < h || (itemH === h && itemV <= v)) {
-      item.classList.add('visible');
-      item.classList.remove('future');
-    } else {
-      item.classList.remove('visible');
+    // Always show all items, but style them differently based on position
+    item.classList.add('visible');
+    
+    // Add a class to indicate if this item is before or after the current slide
+    if (itemH < h || (itemH === h && itemV < v)) {
+      item.classList.add('past');
+    } else if (itemH > h || (itemH === h && itemV > v)) {
       item.classList.add('future');
     }
   });
   
-  // Set active state for current slide
-  const currentItem = document.querySelector(`#outline li[data-slide-h="${h}"][data-slide-v="${v}"]`);
   if (currentItem) {
     currentItem.classList.add('active');
     
     // Ensure the active item is visible in the sidebar (auto-scroll)
     currentItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Log for debugging
+    console.log('Active slide:', h, v, currentItem.textContent);
+  } else {
+    console.log('No matching outline item for slide:', h, v);
   }
 }
 

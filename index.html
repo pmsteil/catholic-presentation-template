@@ -2,176 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catholic Presentation Template</title>
   
   <!-- Load Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
-  <!-- Changed from white to black base theme for better consistency -->
   
-  <!-- Load Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
+  <!-- Load Google Fonts - Part 1 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap">
+  
+  <!-- Load Google Fonts - Part 2 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Sorts+Mill+Goudy:ital@0;1&family=Spectral:wght@400;500;600;700&family=Baskervville:ital@0;1&family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Gilda+Display&family=Abhaya+Libre:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&family=Ovo&family=Rosarivo:ital@0;1&family=Prata&family=Trirong:wght@400;500;600;700&display=swap">
   
   <!-- Load our custom Catholic theme -->
   <link rel="stylesheet" href="css/catholic-theme.css">
+  <!-- Load layout CSS -->
+  <link rel="stylesheet" href="css/layout.css">
   
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <style>
-    /* Override font families with Google Fonts */
-    .reveal {
-      font-family: 'EB Garamond', serif;
-    }
-    .reveal h1, 
-    .reveal h2, 
-    .reveal h3, 
-    .reveal h4, 
-    .reveal h5, 
-    .reveal h6 {
-      font-family: 'Cinzel', serif;
-    }
-  </style>
 </head>
 <body>
+  <!-- Sidebar with outline - now part of the main layout -->
+  <div id="sidebar">
+    <ul id="outline"></ul>
+  </div>
   <div class="reveal">
     <div class="slides">
       <!-- Title Slide -->
       <section data-outline="Introduction" class="title-slide">
         <h1>Catholic Presentation Template</h1>
-        <h3>With Synchronized Sidebar Outline</h3>
+        <h3>With Different Font Styles</h3>
         <div class="catholic-divider"></div>
         <p><em>"For where two or three are gathered together in my name, there am I in the midst of them."</em></p>
         <p class="scripture-reference">Matthew 18:20</p>
       </section>
       
-      <!-- Scripture Section -->
-      <section data-outline="Scripture Quotes">
-        <h2>Scripture Quotes</h2>
-        <p class="fragment">Each quote appears in sync with the sidebar</p>
-        
-        <div class="scripture fragment">
-          <p>In the beginning was the Word, and the Word was with God, and the Word was God.</p>
-          <p class="scripture-reference">John 1:1</p>
-        </div>
-        
-        <div class="scripture fragment">
-          <p>I am the way and the truth and the life. No one comes to the Father except through me.</p>
-          <p class="scripture-reference">John 14:6</p>
-        </div>
-      </section>
-      
-      <!-- Saints Section -->
-      <section data-outline="Words of the Saints">
-        <h2>Words of the Saints</h2>
-        
-        <div class="fragment">
-          <blockquote>
-            <p>"Pray as though everything depended on God. Work as though everything depended on you."</p>
-          </blockquote>
-          <p><strong>— St. Augustine</strong></p>
-        </div>
-        
-        <div class="fragment">
-          <blockquote>
-            <p>"Be who God meant you to be and you will set the world on fire."</p>
-          </blockquote>
-          <p><strong>— St. Catherine of Siena</strong></p>
-        </div>
-      </section>
-      
-      <!-- Catholic Virtues -->
-      <section data-outline="Catholic Virtues">
-        <h2>Catholic Virtues</h2>
-        
-        <div class="fragment">
-          <h3>Theological Virtues</h3>
-          <ul>
-            <li>Faith</li>
-            <li>Hope</li>
-            <li>Charity</li>
-          </ul>
-        </div>
-        
-        <div class="fragment">
-          <h3>Cardinal Virtues</h3>
-          <ul>
-            <li>Prudence</li>
-            <li>Justice</li>
-            <li>Fortitude</li>
-            <li>Temperance</li>
-          </ul>
-        </div>
-      </section>
-      
-      <!-- Seven Sacraments -->
-      <section data-outline="The Seven Sacraments">
-        <h2>The Seven Sacraments</h2>
-        
-        <div class="fragment">
-          <h3>Sacraments of Initiation</h3>
-          <ul>
-            <li>Baptism</li>
-            <li>Confirmation</li>
-            <li>Eucharist</li>
-          </ul>
-        </div>
-        
-        <div class="fragment">
-          <h3>Sacraments of Healing</h3>
-          <ul>
-            <li>Reconciliation</li>
-            <li>Anointing of the Sick</li>
-          </ul>
-        </div>
-        
-        <div class="fragment">
-          <h3>Sacraments of Service</h3>
-          <ul>
-            <li>Matrimony</li>
-            <li>Holy Orders</li>
-          </ul>
-        </div>
-      </section>
-      
-      <!-- Prayer Example -->
-      <section data-outline="Prayer">
-        <h2>The Lord's Prayer</h2>
+      <!-- Introduction Slide -->
+      <section data-outline="Introduction" data-font-style="Style 1">
+        <h2>Introduction</h2>
+        <h3>Catholic Tradition & Teaching</h3>
+        <p>This presentation explores the rich traditions and teachings of the Catholic Church, focusing on key aspects of faith, liturgy, and spiritual practice.</p>
         
         <div class="scripture">
-          <p class="fragment">Our Father, who art in heaven,<br>
-          hallowed be thy name;</p>
-          <p class="fragment">thy kingdom come,<br>
-          thy will be done<br>
-          on earth as it is in heaven.</p>
-          <p class="fragment">Give us this day our daily bread,<br>
-          and forgive us our trespasses,</p>
-          <p class="fragment">as we forgive those who trespass against us;<br>
-          and lead us not into temptation,<br>
-          but deliver us from evil.</p>
-          <p class="fragment">Amen.</p>
-        </div>
-      </section>
-      
-      <!-- Conclusion -->
-      <section data-outline="Conclusion">
-        <h2>Conclusion</h2>
-        <p class="fragment">This template features:</p>
-        <ul>
-          <li class="fragment">A synchronized sidebar outline</li>
-          <li class="fragment">Catholic design elements</li>
-          <li class="fragment">Scripture formatting</li>
-          <li class="fragment">Appropriate typography and colors</li>
-        </ul>
-        
-        <div class="catholic-divider fragment"></div>
-        
-        <div class="scripture fragment">
           <p>"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."</p>
           <p class="scripture-reference">Matthew 28:19</p>
         </div>
       </section>
+      
+      <!-- Agenda/Outline Slide -->
+      <section data-outline="Agenda" data-font-style="Style 1">
+        <h2>Presentation Outline</h2>
+        <ol>
+          <li>The Seven Sacraments</li>
+          <li>Liturgical Calendar</li>
+          <li>Sacred Scripture & Tradition</li>
+          <li>Prayer & Devotional Practices</li>
+          <li>Catholic Social Teaching</li>
+          <li>Resources for Further Study</li>
+        </ol>
+      </section>
+      
+      <!-- Content with Image Side-by-Side -->
+      <section data-outline="The Seven Sacraments" data-font-style="Style 1">
+        <h2>The Seven Sacraments</h2>
+        <div class="two-column">
+          <div class="column">
+            <h4>Sacraments of Initiation</h4>
+            <ul>
+              <li>Baptism</li>
+              <li>Confirmation</li>
+              <li>Eucharist</li>
+            </ul>
+            <h4>Sacraments of Healing</h4>
+            <ul>
+              <li>Reconciliation</li>
+              <li>Anointing of the Sick</li>
+            </ul>
+            <h4>Sacraments of Service</h4>
+            <ul>
+              <li>Holy Orders</li>
+              <li>Matrimony</li>
+            </ul>
+          </div>
+          <div class="column image-column">
+            <div class="image-placeholder">
+              <p>[Image of Sacraments]</p>
+            </div>
+            <p class="caption">The seven sacraments are efficacious signs of grace instituted by Christ.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Timeline Slide -->
+      <section data-outline="Liturgical Calendar" data-font-style="Style 1">
+        <h2>Liturgical Calendar</h2>
+        <h3>The Church Year</h3>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Advent</h4>
+            <p>Four weeks of preparation before Christmas</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Christmas</h4>
+            <p>Celebration of Christ's birth through Epiphany</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Ordinary Time I</h4>
+            <p>Period between Christmas and Lent</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Lent</h4>
+            <p>40 days of preparation for Easter</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Easter</h4>
+            <p>50-day celebration of Christ's Resurrection</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Ordinary Time II</h4>
+            <p>Period until the next Advent</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Quote/Testimonial Slide -->
+      <section data-outline="Sacred Scripture & Tradition" data-font-style="Style 1">
+        <h2>Sacred Scripture & Tradition</h2>
+        
+        <blockquote>
+          <p>"Sacred Tradition and Sacred Scripture form one sacred deposit of the word of God, committed to the Church."</p>
+          <cite>Catechism of the Catholic Church, 97</cite>
+        </blockquote>
+        
+        <div class="two-column">
+          <div class="column">
+            <h4>Sacred Scripture</h4>
+            <p>The inspired Word of God written by human authors</p>
+          </div>
+          <div class="column">
+            <h4>Sacred Tradition</h4>
+            <p>The living transmission of the Church's gospel message</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Comparison Table Slide -->
+      <section data-outline="Prayer & Devotional Practices" data-font-style="Style 1">
+        <h2>Prayer & Devotional Practices</h2>
+        
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Form of Prayer</th>
+              <th>Description</th>
+              <th>Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vocal Prayer</td>
+              <td>Praying aloud using set words</td>
+              <td>Our Father, Hail Mary</td>
+            </tr>
+            <tr>
+              <td>Meditation</td>
+              <td>Reflecting on sacred texts or images</td>
+              <td>Lectio Divina, Rosary</td>
+            </tr>
+            <tr>
+              <td>Contemplation</td>
+              <td>Silent presence with God</td>
+              <td>Adoration, Centering Prayer</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Infographic-Style Slide -->
+      <section data-outline="Catholic Social Teaching" data-font-style="Style 1">
+        <h2>Catholic Social Teaching</h2>
+        <h3>Seven Principles</h3>
+        
+        <div class="principles-grid">
+          <div class="principle">
+            <h4>1. Life & Dignity</h4>
+            <p>Human life is sacred and dignity is the foundation of moral vision</p>
+          </div>
+          <div class="principle">
+            <h4>2. Family & Community</h4>
+            <p>People have a right and duty to participate in society</p>
+          </div>
+          <div class="principle">
+            <h4>3. Rights & Responsibilities</h4>
+            <p>Every person has fundamental rights that must be protected</p>
+          </div>
+          <div class="principle">
+            <h4>4. Option for the Poor</h4>
+            <p>The moral test of society is how we treat the most vulnerable</p>
+          </div>
+          <div class="principle">
+            <h4>5. Dignity of Work</h4>
+            <p>Work is more than a way to make a living; it's a form of participation in creation</p>
+          </div>
+          <div class="principle">
+            <h4>6. Solidarity</h4>
+            <p>We are one human family regardless of national, racial, ethnic, economic, and ideological differences</p>
+          </div>
+          <div class="principle">
+            <h4>7. Care for Creation</h4>
+            <p>We show our respect for the Creator by our stewardship of creation</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Resources Slide -->
+      <section data-outline="Resources" data-font-style="Style 1">
+        <h2>Resources for Further Study</h2>
+        
+        <div class="resources">
+          <div class="resource-category">
+            <h4>Official Church Documents</h4>
+            <ul>
+              <li>Catechism of the Catholic Church</li>
+              <li>Documents of Vatican II</li>
+              <li>Papal Encyclicals</li>
+            </ul>
+          </div>
+          
+          <div class="resource-category">
+            <h4>Websites</h4>
+            <ul>
+              <li>Vatican.va - Official Vatican Website</li>
+              <li>USCCB.org - United States Conference of Catholic Bishops</li>
+              <li>Catholic.com - Catholic Answers</li>
+            </ul>
+          </div>
+          
+          <div class="resource-category">
+            <h4>Recommended Reading</h4>
+            <ul>
+              <li><em>Introduction to Christianity</em> by Joseph Ratzinger</li>
+              <li><em>The Lamb's Supper</em> by Scott Hahn</li>
+              <li><em>Story of a Soul</em> by St. Thérèse of Lisieux</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Q&A/Contact Slide -->
+      <section data-outline="Questions & Contact" data-font-style="Style 1">
+        <h2>Questions & Contact</h2>
+        
+        <div class="contact-info">
+          <p><strong>Email:</strong> catholic@example.com</p>
+          <p><strong>Website:</strong> www.catholicpresentation.example</p>
+          <p><strong>Phone:</strong> (555) 123-4567</p>
+        </div>
+        
+        <div class="scripture">
+          <p>"The grace of the Lord Jesus Christ and the love of God and the fellowship of the Holy Spirit be with you all."</p>
+          <p class="scripture-reference">2 Corinthians 13:14</p>
+        </div>
+      </section>
+      
+
     </div>
   </div>
   
@@ -192,6 +289,9 @@
       progress: true,
       center: false,
       transition: 'fade', // fade transition works well with Catholic aesthetic
+      disableLayout: true, // Disable default layout to allow our custom layout
+      width: '80%',
+      margin: 0,
       
       // Learn about plugins: https://revealjs.com/plugins/
       plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]

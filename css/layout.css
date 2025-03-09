@@ -1,0 +1,44 @@
+/**
+ * Layout CSS for Catholic Presentation Template
+ * This file handles the layout of the sidebar and main content
+ */
+
+/* Make sure the body is a relative positioning context */
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fix the sidebar position */
+#sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  z-index: 1000;
+  padding: 2.5rem 1rem 2rem 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: var(--catholic-dark);
+}
+
+/* Adjust reveal.js containers */
+.reveal,
+.reveal-viewport {
+  width: 80% !important;
+}
+
+/* Ensure slides are properly positioned */
+.reveal .slides {
+  height: auto !important;
+}
+
+/* Override any reveal.js styles that might interfere */
+.reveal .slides > section {
+  min-height: 0 !important;
+}
