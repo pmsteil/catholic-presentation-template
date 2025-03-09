@@ -1,0 +1,193 @@
+/**
+ * Catholic Theme for reveal.js
+ * Featuring traditional colors and typography reflective of Catholic aesthetics
+ */
+
+:root {
+  /* Catholic-inspired Color Palette */
+  --catholic-red: #8b0000;       /* Deep red (cardinal red) */
+  --catholic-gold: #d4af37;      /* Gold */
+  --catholic-purple: #4b0082;    /* Deep purple (papal purple) */
+  --catholic-blue: #000080;      /* Navy blue (Marian blue) */
+  --catholic-white: #f8f8f8;     /* Soft white for backgrounds */
+  --catholic-cream: #fffdd0;     /* Cream color for parchment-like texture */
+  --catholic-dark: #1a1a1a;      /* Near black for text */
+}
+
+/* Base theme */
+body {
+  background: var(--catholic-white);
+  background-image: url('../img/parchment-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.reveal {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: var(--catholic-dark);
+}
+
+.reveal .slides {
+  text-align: left;
+  width: 70%;  /* Make room for sidebar */
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Headings */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Trajan Pro", "Times New Roman", Times, serif;
+  color: var(--catholic-red);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5em 0;
+  line-height: 1.2;
+}
+
+.reveal h1 {
+  font-size: 3.0em;
+  border-bottom: 2px solid var(--catholic-gold);
+  padding-bottom: 0.2em;
+}
+
+.reveal h2 {
+  font-size: 2.2em;
+}
+
+.reveal h3 {
+  font-size: 1.6em;
+}
+
+.reveal h4 {
+  font-size: 1.2em;
+  color: var(--catholic-purple);
+}
+
+/* Scripture styling */
+.scripture {
+  font-style: italic;
+  border-left: 4px solid var(--catholic-gold);
+  padding-left: 1em;
+  margin: 1em 0;
+}
+
+.scripture-reference {
+  font-weight: bold;
+  color: var(--catholic-red);
+  display: block;
+  text-align: right;
+  margin-top: 0.5em;
+}
+
+/* Links */
+.reveal a {
+  color: var(--catholic-blue);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--catholic-purple);
+  text-shadow: none;
+  border: none;
+}
+
+/* Right Sidebar - Outline */
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(248, 248, 248, 0.9);
+  border-left: 3px solid var(--catholic-gold);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+#sidebar h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--catholic-red);
+  border-bottom: 1px solid var(--catholic-gold);
+  padding-bottom: 0.5rem;
+}
+
+#outline {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+#outline li {
+  margin: 0.8em 0;
+  padding-left: 1.2em;
+  position: relative;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+#outline li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--catholic-gold);
+}
+
+#outline li.active {
+  opacity: 1;
+  font-weight: bold;
+  color: var(--catholic-red);
+}
+
+#outline li.active:before {
+  content: "✝";
+  color: var(--catholic-red);
+}
+
+#outline li.visible {
+  opacity: 1;
+}
+
+/* Fragment animations */
+.reveal .fragment {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.reveal .fragment.visible {
+  opacity: 1;
+}
+
+/* Catholic decorative elements */
+.catholic-divider {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.catholic-divider:after {
+  content: "✝";
+  font-size: 1.5em;
+  color: var(--catholic-gold);
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+/* Print styles */
+@media print {
+  #sidebar {
+    display: none;
+  }
+  
+  .reveal .slides {
+    width: 100%;
+  }
+}
