@@ -9,24 +9,25 @@
   --catholic-gold: #d4af37;      /* Gold */
   --catholic-purple: #4b0082;    /* Deep purple (papal purple) */
   --catholic-blue: #000080;      /* Navy blue (Marian blue) */
-  --catholic-white: #f8f8f8;     /* Soft white for backgrounds */
-  --catholic-cream: #fffdd0;     /* Cream color for parchment-like texture */
-  --catholic-dark: #1a1a1a;      /* Near black for text */
+  --catholic-white: #f8f8f8;     /* Soft white for text */
+  --catholic-cream: #fffdd0;     /* Cream color for highlights */
+  --catholic-dark: #000000;      /* Black for background */
 }
 
 /* Base theme */
 body {
-  background: var(--catholic-white);
-  background-image: url('../img/parchment-bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
+  background: var(--catholic-dark);
+  /* Background image removed per client request for black background */
+  /* background-image: url('../img/parchment-bg.jpg'); */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
 }
 
 .reveal {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 2.5rem;
   font-weight: normal;
-  color: var(--catholic-dark);
+  color: var(--catholic-white);  /* Changed text color to white for contrast */
 }
 
 .reveal .slides {
@@ -44,7 +45,7 @@ body {
 .reveal h5,
 .reveal h6 {
   font-family: "Trajan Pro", "Times New Roman", Times, serif;
-  color: var(--catholic-red);
+  color: var(--catholic-gold);  /* Changed headings to gold for better visibility on black */
   text-transform: none;
   letter-spacing: 0.02em;
   margin: 0 0 0.5em 0;
@@ -53,7 +54,7 @@ body {
 
 .reveal h1 {
   font-size: 3.0em;
-  border-bottom: 2px solid var(--catholic-gold);
+  border-bottom: 2px solid var(--catholic-red);
   padding-bottom: 0.2em;
 }
 
@@ -67,7 +68,7 @@ body {
 
 .reveal h4 {
   font-size: 1.2em;
-  color: var(--catholic-purple);
+  color: var(--catholic-gold);  /* Changed to gold for visibility on black */
 }
 
 /* Scripture styling */
@@ -88,13 +89,13 @@ body {
 
 /* Links */
 .reveal a {
-  color: var(--catholic-blue);
+  color: var(--catholic-gold);  /* Changed link color for visibility on black */
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .reveal a:hover {
-  color: var(--catholic-purple);
+  color: var(--catholic-white);
   text-shadow: none;
   border: none;
 }
@@ -106,18 +107,19 @@ body {
   right: 0;
   width: 25%;
   height: 100%;
-  background-color: rgba(248, 248, 248, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);  /* Darkened sidebar background */
   border-left: 3px solid var(--catholic-gold);
   overflow-y: auto;
   z-index: 100;
   padding: 2rem 1rem;
   box-sizing: border-box;
+  color: var(--catholic-white);  /* Set sidebar text color to white */
 }
 
 #sidebar h3 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: var(--catholic-red);
+  color: var(--catholic-gold);  /* Changed to gold for visibility */
   border-bottom: 1px solid var(--catholic-gold);
   padding-bottom: 0.5rem;
 }
@@ -133,6 +135,7 @@ body {
   position: relative;
   opacity: 0.5;
   transition: opacity 0.3s ease;
+  color: var(--catholic-white);  /* Ensure outline text is white */
 }
 
 #outline li:before {
@@ -190,4 +193,35 @@ body {
   .reveal .slides {
     width: 100%;
   }
+}
+
+/* Override default reveal.js styles */
+.reveal .progress {
+  color: var(--catholic-red);  /* Progress bar color */
+}
+
+.reveal .controls {
+  color: var(--catholic-gold);  /* Navigation controls color */
+}
+
+/* Ensure blockquotes are visible on dark background */
+.reveal blockquote {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--catholic-gold);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.5em 1em;
+  color: var(--catholic-white);
+}
+
+/* Style lists for better visibility */
+.reveal ul, 
+.reveal ol {
+  display: block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ul li,
+.reveal ol li {
+  margin-bottom: 0.5em;
 }
